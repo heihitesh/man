@@ -6,11 +6,15 @@
     android:orientation="vertical"
     tools:context=".UserList">
 
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="5dp"
         android:weightSum="10">
 
         <TextView
@@ -24,20 +28,39 @@
             android:text="User Not Loged IN"
             android:textColor="#000" />
 
-        <TextView
-            android:id="@+id/tvDate"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_height="match_parent"
             android:layout_weight="7"
-            android:gravity="center"
-            android:text="Date"
-            android:background="#ed540c"
-            android:textColor="#000" />
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Style No"
+                android:textSize="7dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="#ec4228"
+                android:layout_weight="8" />
+
+            <TextView
+                android:id="@+id/tvStyleNo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="#ed540c"
+                android:gravity="center"
+                android:text="Style"
+                android:textStyle="bold|italic"
+                android:textColor="#000" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
 
 
     <LinearLayout
@@ -78,452 +101,452 @@
             android:textStyle="bold|italic" />
     </LinearLayout>
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="80">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:background="@drawable/curve_black"
+                android:weightSum="10">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="8:30 - 9:30 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="8:30 - 9:30 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvPro1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textStyle="italic|bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="9:30 - 10:30 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvTar1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="10:30 - 11:30 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="11:30 - 12:30 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="1:00 - 2:00 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="2:00 - 3:00 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="3:00 - 4:00 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro7"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar7"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="4:00 - 5:00 "
-                        android:textSize="22dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvPro8"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="3.5"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-                    <TextView
-                        android:id="@+id/tvTar8"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="3.5"
-                        android:background="#f9f8b6"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:textColor="#000"
-                        android:textSize="23dp"
-                        android:textStyle="italic|bold" />
-
-
-                </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f1dc75"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:layout_margin="3dp"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="italic|bold" />
 
 
             </LinearLayout>
 
 
         </LinearLayout>
-    </ScrollView>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bRefresh"
-        android:text="Refresh"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="9:30 - 10:30 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="10:30 - 11:30 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="11:30 - 12:30 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="1:00 - 2:00 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="2:00 - 3:00 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="3:00 - 4:00 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="4:00 - 5:00 "
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvPro8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:id="@+id/tvTar8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.5"
+                    android:background="#f9f8b6"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:textStyle="italic|bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

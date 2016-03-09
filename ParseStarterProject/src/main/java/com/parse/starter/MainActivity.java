@@ -305,7 +305,7 @@ public class MainActivity extends ActionBarActivity implements View.OnKeyListene
   }
 
   public void showUserList() {
-    Intent i = new Intent(getApplicationContext(), UserList.class);
+    Intent i = new Intent(getApplicationContext(), SplashScreen.class);
     startActivity(i);
   }
 }

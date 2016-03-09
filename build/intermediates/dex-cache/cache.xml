@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-ac514937c9008a093bfd868d23d8657461825708.jar" />
+    </item>
+    <item
         jar="C:\Users\Nilesh Verma\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.13.0\58a7d54b6a4f28be11f0cecec93097eddf473e6f\parse-android-1.13.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
         <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\parse-android-1.13.0-da8a40446a6952fcc90af8cf545541c49b36ce9f.jar" />
-    </item>
-    <item
-        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-70ba567356d3f4e70248bb87208265e9c5e15549.jar" />
     </item>
     <item
         jar="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
@@ -23,25 +23,39 @@
         <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-8deee407e752b5da3a385471aa085997bed60c88.jar" />
     </item>
     <item
+        jar="C:\Users\Nilesh Verma\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.2.3\f474798fde03291398b1a016118b9809a79550b7\MPAndroidChart-v2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f474798fde03291398b1a016118b9809a79550b7">
+        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\MPAndroidChart-v2.2.3-7a616c8096181b7709905e660221aa38393bab51.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-b900eaefdf91acf51e66dad4e617a403e5e2266d.jar" />
+    </item>
+    <item
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-6ededcc9b39f46fbcdd6efbd1a4d51bb6afd2a15.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-a40f9a520f26ef5e0c214399de33c45d2e201643.jar" />
+    </item>
+    <item
         jar="C:\Users\Nilesh Verma\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
         <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0-fd2868f7d9801ef7eaaf6deab53d8a2ab7e96b8f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-9ea7e0536249fb79cf27ece06a81a4813ac0e3f0.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\Nilesh Verma\Desktop\man\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-a148c47e399d8c057ef020931e2773dc1725a347.jar" />
     </item>
 
 </items>

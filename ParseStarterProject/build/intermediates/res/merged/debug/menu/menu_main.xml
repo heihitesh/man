@@ -14,5 +14,14 @@
           android:title="@string/action_settings"
           android:orderInCategory="100"
           app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:icon="@drawable/hh"
+        android:actionLayout="@layout/app_bar"
+        android:showAsAction="ifRoom"
+        style="@android:style/Widget.ActionButton"
+        android:title="Refresh"
+        tools:targetApi="honeycomb" />
 </menu>
 <!-- From: file:/C:/Users/Nilesh%20Verma/Desktop/man/ParseStarterProject/src/main/res/menu/menu_main.xml -->

@@ -16,10 +16,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -81,7 +81,7 @@ public class UserList extends AppCompatActivity implements AdapterView.OnItemSel
     Boolean fetchDataAutomatically = false;
 
 
-    Switch switchButton;
+    CheckBox switchButton;
 
     public int sendData() {
         return pa1;
@@ -348,7 +348,7 @@ public class UserList extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });*/
 
-        switchButton = (Switch) findViewById(R.id.swgetData);
+        switchButton = (CheckBox) findViewById(R.id.swgetData);
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -798,6 +798,7 @@ public class UserList extends AppCompatActivity implements AdapterView.OnItemSel
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
         showDialog(999);
+        Toast.makeText(UserList.this, "Please Download the Data Now ", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -832,7 +833,8 @@ public class UserList extends AppCompatActivity implements AdapterView.OnItemSel
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent i = new Intent(UserList.this,About.class);
+                startActivity(i);
                 return true;
 
             case R.id.get:

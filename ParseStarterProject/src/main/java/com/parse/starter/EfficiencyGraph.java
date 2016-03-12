@@ -46,7 +46,7 @@ public class EfficiencyGraph extends AppCompatActivity {
         od = i.getFloatExtra("ED", 0);
         oe = i.getFloatExtra("EE", 0);
         of = i.getFloatExtra("EF", 0);
-
+        setTitle("Efficiency Bar Graph" );
 
         combinedChart = (com.github.mikephil.charting.charts.CombinedChart) findViewById(R.id.chart);
         combinedChart.animateY(1200);

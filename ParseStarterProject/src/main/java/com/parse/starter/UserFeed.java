@@ -23,6 +23,7 @@ public class UserFeed extends AppCompatActivity {
     String line;
     TextView P1, P2, P3, P4, P5, P6, P7, P8;
     TextView T1, T2, T3, T4, T5, T6, T7, T8;
+    TextView totalProduction,TotalTarget;
     int p1, p2, p3, p4, p5, p6, p7, p8;
     int t1, t2, t3, t4, t5, t6, t7, t8;
     String style, username;
@@ -55,6 +56,8 @@ public class UserFeed extends AppCompatActivity {
         Lineno = i.getStringExtra("lineno");
         line = "Line" + Lineno;
         Date = i.getStringExtra("date");
+        TotalTarget = (TextView) findViewById(R.id.tvTotalT);
+        totalProduction = (TextView) findViewById(R.id.tvTotalP);
 
         loadForProductionActivity = i.getBooleanExtra("loadData", false);
 
@@ -119,6 +122,18 @@ public class UserFeed extends AppCompatActivity {
         T7.setText(String.valueOf(t7));
         T8.setText(String.valueOf(t8));
 
+        String totalP = String.valueOf(Integer.parseInt(String.valueOf(P1.getText())) + Integer.parseInt(String.valueOf(P2.getText()))
+                +Integer.parseInt(String.valueOf(P3.getText()))+Integer.parseInt(String.valueOf(P4.getText()))
+                +Integer.parseInt(String.valueOf(P5.getText()))+Integer.parseInt(String.valueOf(P6.getText()))
+                +Integer.parseInt(String.valueOf(P7.getText())) + Integer.parseInt(String.valueOf(P8.getText())));
+        totalProduction.setText(totalP);
+
+        String totalT = String.valueOf(Integer.parseInt(String.valueOf(T1.getText())) + Integer.parseInt(String.valueOf(T2.getText()))
+                +Integer.parseInt(String.valueOf(T3.getText()))+Integer.parseInt(String.valueOf(T4.getText()))
+                +Integer.parseInt(String.valueOf(T5.getText()))+Integer.parseInt(String.valueOf(T6.getText()))
+                +Integer.parseInt(String.valueOf(T7.getText())) + Integer.parseInt(String.valueOf(T8.getText())));
+        TotalTarget.setText(totalT);
+
         Status.setText("Updated By " + username);
         StyleNo.setText(style);
 
@@ -164,6 +179,11 @@ public class UserFeed extends AppCompatActivity {
                                     P6.setText(String.valueOf(objects.get(0).getNumber("P6")));
                                     P7.setText(String.valueOf(objects.get(0).getNumber("P7")));
                                     P8.setText(String.valueOf(objects.get(0).getNumber("P8")));
+                                    String totalP = String.valueOf(Integer.parseInt(String.valueOf(P1.getText())) + Integer.parseInt(String.valueOf(P2.getText()))
+                                    +Integer.parseInt(String.valueOf(P3.getText()))+Integer.parseInt(String.valueOf(P4.getText()))
+                                    +Integer.parseInt(String.valueOf(P5.getText()))+Integer.parseInt(String.valueOf(P6.getText()))
+                                    +Integer.parseInt(String.valueOf(P7.getText())) + Integer.parseInt(String.valueOf(P8.getText())));
+                                    totalProduction.setText(totalP);
 
                                     T1.setText(String.valueOf(objects.get(0).getNumber("T1")));
                                     T2.setText(String.valueOf(objects.get(0).getNumber("T2")));
@@ -173,6 +193,11 @@ public class UserFeed extends AppCompatActivity {
                                     T6.setText(String.valueOf(objects.get(0).getNumber("T6")));
                                     T7.setText(String.valueOf(objects.get(0).getNumber("T7")));
                                     T8.setText(String.valueOf(objects.get(0).getNumber("T8")));
+                                    String totalT = String.valueOf(Integer.parseInt(String.valueOf(T1.getText())) + Integer.parseInt(String.valueOf(T2.getText()))
+                                            +Integer.parseInt(String.valueOf(T3.getText()))+Integer.parseInt(String.valueOf(T4.getText()))
+                                            +Integer.parseInt(String.valueOf(T5.getText()))+Integer.parseInt(String.valueOf(T6.getText()))
+                                            +Integer.parseInt(String.valueOf(T7.getText())) + Integer.parseInt(String.valueOf(T8.getText())));
+                                    TotalTarget.setText(totalT);
 
                                     Status.setText("Updated By " + String.valueOf(objects.get(0).getString("username")));
                                     StyleNo.setText(String.valueOf(objects.get(0).getString("StyleNo")));

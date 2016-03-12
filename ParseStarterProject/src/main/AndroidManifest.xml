@@ -12,6 +12,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".StarterApplication"
@@ -134,23 +135,23 @@
 
         </activity>
 
-        <activity
-            android:name=".CombinedChart"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.parse.starter.CombinedChart" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-        </activity>
-
 
         <activity
             android:name=".EfficiencyGraph"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="com.parse.starter.EfficiencyGraph" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".About"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.parse.starter.About" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

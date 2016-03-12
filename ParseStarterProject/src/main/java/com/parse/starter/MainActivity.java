@@ -8,10 +8,11 @@
  */
 package com.parse.starter;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.KeyEvent;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +20,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -30,18 +30,21 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnKeyListener {
+public class MainActivity extends AppCompatActivity {
 
-  EditText Username, Password;
-  TextView ChangeSignUpmode;
-  Boolean signUpModeActive;
-  Button SignUp;
-  RelativeLayout layout;
-  ImageView logo;
+    EditText Username, Password;
+    Boolean signUpModeActive;
+    Button SignUp, Login;
+    LinearLayout layout;
+    ImageView logo;
+    // flag for Internet connection status
+    ConnectionDetector cd;
+    // flag for Internet connection status
+    Boolean isInternetPresent = false;
 
 
-  void education() {
-    //put in Oncreate() method
+    void education() {
+        //put in Oncreate() method
 
 
     /* -----------------------FOR CREATING OBJECTS----------------------
@@ -167,145 +170,164 @@ public class MainActivity extends ActionBarActivity implements View.OnKeyListene
       ParseUser.LogOut();
      */
 
-  }
-
-  ;
-
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-
-    ParseAnalytics.trackAppOpenedInBackground(getIntent());
-
-    if (ParseUser.getCurrentUser() != null) {
-      showUserList();
     }
 
-    signUpModeActive = true;
+    ;
 
-    Username = (EditText) findViewById(R.id.etUserName);
-    Password = (EditText) findViewById(R.id.etPassword);
-    SignUp = (Button) findViewById(R.id.bSignUp);
-    ChangeSignUpmode = (TextView) findViewById(R.id.tvLogin);
-    logo = (ImageView) findViewById(R.id.ivLogo);
-    layout = (RelativeLayout) findViewById(R.id.lLayout);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appBar);
+        // now we have to say android that we are not using ur toolbar
+        // we are making our own toolbar
+        setSupportActionBar(toolbar);
 
-    logo.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        //makes the keyborad disappear
-        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        getSupportActionBar().setDisplayShowHomeEnabled(true); // this will add a home button to the navigation drawer
+        cd = new ConnectionDetector(getApplicationContext());
 
-      }
-    });
 
-    layout.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        //makes the keyborad disappear
-        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        setTitle("SmarTrack");
+        ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
-      }
-    });
-    ChangeSignUpmode.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        if (signUpModeActive == true) {
-          signUpModeActive = false;
-          ChangeSignUpmode.setText("Sign Up");
-          SignUp.setText("Log In");
-
-        } else {
-          signUpModeActive = true;
-          ChangeSignUpmode.setText("Log In");
-          SignUp.setText("Sign Up");
-
+        if (ParseUser.getCurrentUser() != null) {
+            showUserList();
         }
-      }
-    });
 
-    Username.setOnKeyListener(this);
-    Password.setOnKeyListener(this);
+        signUpModeActive = true;
 
-  }
+        Username = (EditText) findViewById(R.id.etUserName);
+        Password = (EditText) findViewById(R.id.etPassword);
+        SignUp = (Button) findViewById(R.id.bSignUp);
+        SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isInternetPresent = cd.isConnectingToInternet();
+                if (isInternetPresent) {
+                    final ProgressDialog progressDialoga = new ProgressDialog(MainActivity.this);
+                    progressDialoga.setTitle("Please wait..");
+                    progressDialoga.setMessage("Signing Up");
+                    progressDialoga.setCancelable(false);
+                    progressDialoga.show();
+                    ParseUser user = new ParseUser();
+                    user.setUsername(String.valueOf(Username.getText()));
+                    user.setPassword(String.valueOf(Password.getText()));
+                    user.signUpInBackground(new SignUpCallback() {
 
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Toast.makeText(MainActivity.this, "Sign Up Success Please Login in Now ", Toast.LENGTH_LONG).show();
+                                //showUserList();
+                                progressDialoga.dismiss();
 
-  public void SignUpOrLogin(View view) {
+                            } else {
+                                Toast.makeText(MainActivity.this, "Login Un-Successfull " + "\n" +
+                                        e.getMessage().substring(e.getMessage().indexOf(" ")), Toast.LENGTH_LONG).show();
+                                progressDialoga.dismiss();
 
-    if (signUpModeActive == true) { //New Sign Up
-      ParseUser user = new ParseUser();
-      user.setUsername(String.valueOf(Username.getText()));
-      user.setPassword(String.valueOf(Password.getText()));
-      user.signUpInBackground(new SignUpCallback() {
-        @Override
-        public void done(ParseException e) {
-          if (e == null) {
-            Toast.makeText(MainActivity.this, "Sign Up Success Please Login in Now ", Toast.LENGTH_LONG).show();
-            //showUserList();
+                            }
+                        }
+                    });
+                } else {
+                    ViewDialog alert = new ViewDialog();
+                    alert.showDialog(MainActivity.this, "Please Check Your Internet Connection and Then Retry");
 
-          } else {
-            Toast.makeText(MainActivity.this, "Login Un-Successfull " + "\n" +
-                    e.getMessage().substring(e.getMessage().indexOf(" ")), Toast.LENGTH_LONG).show();
-          }
-        }
-      });
-
-    } else { // Login User
-      ParseUser.logInInBackground(String.valueOf(Username.getText()), String.valueOf(Password.getText()),
-              new LogInCallback() {
-                @Override
-                public void done(ParseUser user, ParseException e) {
-                  if (user != null) {
-                    Toast.makeText(getApplicationContext(), "Login Successfull",
-                            Toast.LENGTH_LONG).show();
-                    showUserList();
-                  } else {
-                    Toast.makeText(MainActivity.this, "Login Un-Successfull " + "\n" +
-                            e.getMessage().substring(e.getMessage().indexOf(" ")), Toast.LENGTH_LONG).show();
-
-                  }
                 }
-              });
+
+
+            }
+        });
+        Login = (Button) findViewById(R.id.bLogin);
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                isInternetPresent = cd.isConnectingToInternet();
+                if (isInternetPresent) {
+                    final ProgressDialog progressDialoga = new ProgressDialog(MainActivity.this);
+                    progressDialoga.setTitle("Please wait..");
+                    progressDialoga.setMessage("Logging In");
+                    progressDialoga.setCancelable(false);
+                    progressDialoga.show();
+                    ParseUser.logInInBackground(String.valueOf(Username.getText()), String.valueOf(Password.getText()),
+                            new LogInCallback() {
+                                @Override
+                                public void done(ParseUser user, ParseException e) {
+                                    if (user != null) {
+                                        Toast.makeText(getApplicationContext(), "Login Successfull",
+                                                Toast.LENGTH_LONG).show();
+                                        progressDialoga.dismiss();
+                                        showUserList();
+                                    } else {
+                                        Toast.makeText(MainActivity.this, "Login Un-Successfull " + "\n" +
+                                                e.getMessage().substring(e.getMessage().indexOf(" ")), Toast.LENGTH_LONG).show();
+                                        progressDialoga.dismiss();
+
+
+                                    }
+                                }
+                            });
+                } else {
+                    ViewDialog alert = new ViewDialog();
+                    alert.showDialog(MainActivity.this, "Please Check Your Internet Connection and Then Retry");
+
+                }
+
+
+            }
+        });
+
+        logo = (ImageView) findViewById(R.id.ivLogo);
+        layout = (LinearLayout) findViewById(R.id.lLayout);
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //makes the keyborad disappear
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+
+            }
+        });
+
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //makes the keyborad disappear
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+
+            }
+        });
+
+
     }
-  }
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
-      return true;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
-    return super.onOptionsItemSelected(item);
-  }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-  @Override
-  public boolean onKey(View v, int keyCode, KeyEvent event) {
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
 
-    if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-      SignUpOrLogin(v);
+        return super.onOptionsItemSelected(item);
     }
-    return false;
 
-  }
-
-  public void showUserList() {
-    Intent i = new Intent(getApplicationContext(), SplashScreen.class);
-    startActivity(i);
-  }
+    public void showUserList() {
+        Intent i = new Intent(getApplicationContext(), SplashScreen.class);
+        startActivity(i);
+    }
 }

@@ -4,6 +4,7 @@ package com.parse.starter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,7 @@ public class NavigationDrawerFragment extends Fragment implements HitAdapter.Cli
     private boolean mFromSavedInstanceState; //indicates wheater the fragment is started for the very first time or orientation is changed
     private HitAdapter adapter;
     private View ContainerView;
+    TextView About;
 
     public NavigationDrawerFragment() {
         // Required empty public constructor
@@ -69,6 +72,14 @@ public class NavigationDrawerFragment extends Fragment implements HitAdapter.Cli
         adapter.setClickListner(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));  //very important this sets the layout of the list to be vertical Linear layout
+        About = (TextView) layout.findViewById(R.id.tvAbout);
+        About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), About.class);
+                startActivity(i);
+            }
+        });
 
 
         return layout;
@@ -105,21 +116,27 @@ public class NavigationDrawerFragment extends Fragment implements HitAdapter.Cli
                     savedToPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, mUserLearnedDrawer + "");
 
                 }
-                getActivity().invalidateOptionsMenu(); // it will partially hide the actionbar
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                    getActivity().invalidateOptionsMenu(); // it will partially hide the actionbar
+                }
 
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                getActivity().invalidateOptionsMenu(); // it will partially hide the actionbar
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                    getActivity().invalidateOptionsMenu(); // it will partially hide the actionbar
+                }
             }
             // this will change the alpha of the action bar acc to the slide
 
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 if (slideOffset < 0.6) {
-                    toolbar.setAlpha(1 - slideOffset);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                        toolbar.setAlpha(1 - slideOffset);
+                    }
                 }
             }
         };

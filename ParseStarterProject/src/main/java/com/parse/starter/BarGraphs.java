@@ -60,6 +60,8 @@ public class BarGraphs extends AppCompatActivity {
         te = i.getFloatExtra("TE", 0);
         tf = i.getFloatExtra("TF", 0);
 
+        setTitle("Total Production Bar Graph" );
+
         combinedChart = (CombinedChart) findViewById(R.id.chart);
         combinedChart.animateY(1200);
         data = new CombinedData(getXAxisValues());

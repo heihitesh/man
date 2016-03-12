@@ -23,7 +23,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_weight="3"
-            android:background="#58f205"
+            android:background="#abf782"
             android:gravity="center"
             android:text="User Not Loged IN"
             android:textColor="#000" />
@@ -39,12 +39,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Style No"
-                android:textSize="7dp"
                 android:layout_gravity="center"
+                android:layout_weight="8"
+                android:background="#f9806d"
                 android:gravity="center"
-                android:background="#ec4228"
-                android:layout_weight="8" />
+                android:text="Style No"
+                android:textSize="7dp" />
 
             <TextView
                 android:id="@+id/tvStyleNo"
@@ -52,11 +52,11 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_weight="2"
-                android:background="#ed540c"
+                android:background="#efa684"
                 android:gravity="center"
                 android:text="Style"
-                android:textStyle="bold|italic"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 
@@ -78,7 +78,7 @@
             android:gravity="center"
             android:text="Time"
             android:textSize="25dp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:gravity="center"
             android:text="Production"
             android:textSize="17dp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
@@ -98,10 +98,13 @@
             android:gravity="center"
             android:text="Target"
             android:textSize="17dp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
     </LinearLayout>
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -115,13 +118,13 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:background="@drawable/curve_black"
                 android:weightSum="10">
 
                 <TextView
@@ -132,33 +135,35 @@
                     android:gravity="center"
                     android:text="8:30 - 9:30 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="15dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f1dc75"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
-                    android:layout_margin="3dp"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -171,11 +176,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -187,33 +193,35 @@
                     android:gravity="center"
                     android:text="9:30 - 10:30 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
-
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -226,11 +234,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -242,32 +251,35 @@
                     android:gravity="center"
                     android:text="10:30 - 11:30 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -280,11 +292,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -296,32 +309,35 @@
                     android:gravity="center"
                     android:text="11:30 - 12:30 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -334,11 +350,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -350,32 +367,35 @@
                     android:gravity="center"
                     android:text="1:00 - 2:00 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -388,11 +408,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -404,32 +425,35 @@
                     android:gravity="center"
                     android:text="2:00 - 3:00 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -442,11 +466,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -458,32 +483,35 @@
                     android:gravity="center"
                     android:text="3:00 - 4:00 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -496,11 +524,12 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_weight="10"
+            android:background="@drawable/curve_black"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
@@ -512,32 +541,95 @@
                     android:gravity="center"
                     android:text="4:00 - 5:00 "
                     android:textSize="22dp"
-                    android:textStyle="italic|bold" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvPro8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="3.5"
+                    android:background="@drawable/pink"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTar8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="3dp"
                     android:layout_weight="3.5"
-                    android:background="#f9f8b6"
+                    android:background="@drawable/yellow_box"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="italic|bold" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="10"
+            android:background="@drawable/curve_red"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Total"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3.5"
+                    android:background="@drawable/pink"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:layout_weight="3.5"
+                    android:text="0"
+                    android:background="@drawable/yellow_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -546,7 +638,10 @@
         </LinearLayout>
 
 
+
     </LinearLayout>
+
+</ScrollView>
 
 
 </LinearLayout>

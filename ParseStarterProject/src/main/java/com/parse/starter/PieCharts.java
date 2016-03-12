@@ -37,6 +37,7 @@ public class PieCharts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pie_chart);
+        setTitle("Production Pie Chart" );
 
         Intent i = getIntent();
         oa = i.getFloatExtra("OA", 0);
@@ -50,6 +51,7 @@ public class PieCharts extends AppCompatActivity {
         ydata = new float[]{oa, ob, oc, od, oe, of};
         PChart = (FrameLayout) findViewById(R.id.flPieChart);
         initilizePieChart();
+
 
     }
 

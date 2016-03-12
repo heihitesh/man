@@ -72,7 +72,7 @@ public class Efficency extends AppCompatActivity {
         ed = i.getFloatExtra("ED", 0);
         ee = i.getFloatExtra("EE", 0);
         ef = i.getFloatExtra("EF", 0);
-
+        setTitle("Efficiency Bar Graph" );
 
         ydata = new float[]{oa, ob, oc, od, oe, of};
 

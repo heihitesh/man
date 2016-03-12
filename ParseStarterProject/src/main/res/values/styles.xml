@@ -23,7 +23,7 @@
 
     <style name="MyCustomToolBar" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorPrimary">#fafcfc</item>
-        <item name="android:textColorSecondary">#f48414</item>
+        <item name="android:textColorSecondary">#f9f9f9</item>
 
     </style>
 

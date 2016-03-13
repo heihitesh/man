@@ -246,7 +246,7 @@ public class UserFeed extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.user_list, menu);
+        getMenuInflater().inflate(R.menu.user_feed, menu);
         return true;
     }
 
@@ -266,6 +266,29 @@ public class UserFeed extends AppCompatActivity {
                     alert.showDialog(UserFeed.this, "Please Check Your Internet Connection and Then Refresh");
                 }
 
+                return true;
+
+            case R.id.graph:
+                Intent i = new Intent(UserFeed.this,BarGraphForLine.class);
+                i.putExtra("p1",Float.valueOf(String.valueOf(P1.getText())));
+                i.putExtra("p2",Float.valueOf(String.valueOf(P2.getText())));
+                i.putExtra("p3",Float.valueOf(String.valueOf(P3.getText())));
+                i.putExtra("p4",Float.valueOf(String.valueOf(P4.getText())));
+                i.putExtra("p5",Float.valueOf(String.valueOf(P5.getText())));
+                i.putExtra("p6",Float.valueOf(String.valueOf(P6.getText())));
+                i.putExtra("p7",Float.valueOf(String.valueOf(P7.getText())));
+                i.putExtra("p8",Float.valueOf(String.valueOf(P8.getText())));
+
+                i.putExtra("t1",Float.valueOf(String.valueOf(T1.getText())));
+                i.putExtra("t2",Float.valueOf(String.valueOf(T2.getText())));
+                i.putExtra("t3",Float.valueOf(String.valueOf(T3.getText())));
+                i.putExtra("t4",Float.valueOf(String.valueOf(T4.getText())));
+                i.putExtra("t5",Float.valueOf(String.valueOf(T5.getText())));
+                i.putExtra("t6",Float.valueOf(String.valueOf(T6.getText())));
+                i.putExtra("t7",Float.valueOf(String.valueOf(T7.getText())));
+                i.putExtra("t8",Float.valueOf(String.valueOf(T8.getText())));
+
+                startActivity(i);
                 return true;
 
             default:
